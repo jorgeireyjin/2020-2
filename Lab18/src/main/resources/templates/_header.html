@@ -1,0 +1,21 @@
+<div class="header-container"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+
+   <div class="site-name">Progra Web Online Store</div>
+  
+   <div class="header-bar">
+      <th:block sec:authorize="isAuthenticated()">
+         Bienvenido
+         <a th:href="@{/admin/usuarioInfo}" 
+            th:utext="${#request.userPrincipal.name}">..</a>
+         &nbsp;|&nbsp;
+         <a th:href="@{/admin/logout}">Cerrar Sesion</a>
+      </th:block>
+      
+      <th:block sec:authorize="!isAuthenticated()">
+         <a th:href="@{/admin/login}">Iniciar Sesion</a>
+      </th:block>
+   </div>
+  
+</div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>..:: Online Store::..</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+    </head>
+    <body>
+
+    <div class="page-title">Progra Web Online Store - CLIENTE REST</div>
+    <div class="demo-container">
+         <h3>Consulta REST</h3>
+         <br>
+
+   <div>
+                 <h3>Consultar por codigo de Producto</h3>
+                 <form method="POST" action="/consultarXCodigo">
+                        <label>Codigo de Producto *</label>
+                         <input type="text" name="codigo" />
+                         <input type="submit" value="Consultar" />
+                         <input type="reset"  value="Limpiar" />
+                 </form>
+   </div>
+             
+   <br><br><br>
+               
+   <div>
+                 <h3>Consultar todos los productos</h3>
+                 <form method="POST" action="/consultarTodos">
+                             <input type="submit" value="Consultar" />
+                             <input type="reset"  value="Limpiar" />
+                 </form>
+                
+</div> 
+
+<br><br><br>
+ <div>
+                <h3>Eliminar codigo de Producto</h3>
+                <form method="POST" action="/eliminarXCodigo">
+                    <label>Codigo de Producto *</label>
+                    <input type="text" name="codigo" />
+                    <input type="submit" value="Eliminar" />
+                    <input type="reset"  value="Limpiar" />
+                </form>
+  </div>
+ 
+ <br><br><br>
+ <div>
+                 <h3>Actualizar Producto</h3>
+                 <form method="POST" action="/actualizar">
+                        <label>Codigo de Producto *</label>
+                        <input type="text" name="codigo" /><br>
+
+                         <label>Nombre de Producto *</label>
+                         <input type="text" name="nombre" /><br>
+
+                         <label>Precio *</label>
+                         <input type="text" name="precio" /><br>
+                         
+                         <input type="submit" value="Actualizar" />
+                         <input type="reset"  value="Limpiar" />
+                 </form>
+   </div>
+             
+
+               <th:block th:include="_footer"></th:block>
+
+</body>
+</html>

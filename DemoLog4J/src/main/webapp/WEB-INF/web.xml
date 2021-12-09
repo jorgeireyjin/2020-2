@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+    <context-param>
+        <param-name>log4j-config-location</param-name>
+        <param-value>D:\\tmp2021\\log4j.properties</param-value>
+    </context-param>
+    
+    <listener>
+        <description>ServletContextListener</description>
+        <listener-class>doit.jin.demolog4j.DemoLog4jListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>Servlet01</servlet-name>
+        <servlet-class>doit.jin.demolog4j.Servlet01</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet01</servlet-name>
+        <url-pattern>/s01</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
